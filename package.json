@@ -1,0 +1,27 @@
+{
+  "name": "@rad/env",
+  "type": "module",
+  "main": "./build/main.js",
+  "module": "./build/main.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./build/main.d.ts",
+      "import": "./build/main.js",
+      "module": "./build/main.js",
+      "require": "./build/main.cjs"
+    }
+  },
+  "dependencies": {
+    "@rad/eslint": "workspace:*",
+    "dotenv-flow": "^4.1.0",
+    "pkg-up": "^5.0.0"
+  },
+  "scripts": {
+    "build": "tsup ./src --outDir build --clean --format esm,cjs --shims --dts --platform node"
+  },
+  "devDependencies": {
+    "@types/dotenv-flow": "^3.3.3",
+    "tsup": "^8.3.5"
+  }
+}
