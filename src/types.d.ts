@@ -10,6 +10,5 @@ interface ImportMeta {
     VITE_DEV_SERVER_PORT: string
     VITE_SERVER_PORT: string
     K8_NAMESPACE: string
-
   }
 }
