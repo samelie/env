@@ -13,7 +13,6 @@
     }
   },
   "dependencies": {
-    "@rad/eslint": "workspace:*",
     "dotenv-flow": "^4.1.0",
     "pkg-up": "^5.0.0"
   },
