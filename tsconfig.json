@@ -1,23 +1,99 @@
 {
-  // BABEL: https://github.com/microsoft/TypeScript-Babel-Starter
-  // https://www.typescriptlang.org/docs/handbook/compiler-options.html
-  "compilerOptions": {
-    "skipLibCheck": true,
-    "jsx": "preserve",
-    "outDir": "build",
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "lib": [ "esnext", "es2022"],
-    "strict": true,
-    "noImplicitAny": false,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "downlevelIteration": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src", "../../types"]
+    "compilerOptions": {
+        "types": [
+            "node"
+        ],
+        "lib": [
+            "ESNext"
+        ],
+        "moduleDetection": "force",
+        "rootDir": ".",
+        "module": "ESNext",
+        "paths": {
+            "@rad/env": [
+                "./packages/env/src/index",
+                "../env/src/index",
+                "../packages/env/src/index",
+                "../../packages/env/src/index",
+                "../../../packages/env/src/index"
+            ],
+            "@rad/vite": [
+                "./packages/vite/src/index",
+                "../vite/src/index",
+                "../packages/vite/src/index",
+                "../../packages/vite/src/index",
+                "../../../packages/vite/src/index"
+            ],
+            "@rad/design-tokens/*": [
+                "./packages/design-tokens/*",
+                "../design-tokens/*",
+                "../packages/design-tokens/*",
+                "../../packages/design-tokens/*",
+                "../../../packages/design-tokens/*"
+            ],
+            "@rad/eslint-plugin-rules": [
+                "./packages/eslint-plugin-rules",
+                "../eslint-plugin-rules",
+                "../packages/eslint-plugin-rules",
+                "../../packages/eslint-plugin-rules",
+                "../../../packages/eslint-plugin-rules",
+                "../../../../packages/eslint-plugin-rules"
+            ],
+            "@rad/global-type-defs": [
+                "./packages/global-type-defs",
+                "../global-type-defs",
+                "../packages/global-type-defs",
+                "../../packages/global-type-defs",
+                "../../../packages/global-type-defs",
+                "../../../../packages/global-type-defs"
+            ],
+            "@rad/type-utils": [
+                "./packages/type-utils/src/index",
+                "../type-utils/src/index",
+                "../packages/type-utils/src/index",
+                "../../packages/type-utils/src/index",
+                "../../../packages/type-utils/src/index"
+            ]
+        },
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "skipLibCheck": true,
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "resolveJsonModule": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "skipDefaultLibCheck": true
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "build"
+    ],
+    "references": [
+        {
+            "path": "./builder.tsconfig.json"
+        }
+    ],
+    "watchOptions": {
+        "excludeDirectories": [
+            "**/node_modules",
+            "build",
+            "dist"
+        ],
+        "fallbackPolling": "dynamicPriority",
+        "synchronousWatchDirectory": true,
+        "watchDirectory": "UseFsEvents",
+        "watchFile": "UseFsEventsOnParentDirectory"
+    }
 }

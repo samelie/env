@@ -1,9 +1,8 @@
-import { join, parse } from "node:path";
-import { fileURLToPath } from "node:url";
 import dotenv from "dotenv-flow";
-import { pkgUpSync } from "pkg-up";
+// import { parse } from "node:path";
+// import { fileURLToPath } from "node:url";
 
-const dirname = parse(fileURLToPath(import.meta.url)).dir;
+// const dirname = parse(fileURLToPath(import.meta.url)).dir;
 // export const pkgRootDir = parse(pkgUpSync({ cwd: dirname }) || "").dir;
 
 export function load(absPath:string) {
