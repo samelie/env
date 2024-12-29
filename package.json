@@ -14,8 +14,7 @@
   },
   "dependencies": {
     "dotenv-flow": "^4.1.0",
-    "@rad/env": "workspace:*",
-    "pkg-up": "^5.0.0"
+    "@rad/eslint": "workspace:*"
   },
   "scripts": {
     "build": "tsup ./src --outDir build --clean --format esm,cjs --shims --dts --platform node"
