@@ -39,6 +39,13 @@
                 "../../packages/vite/src/index",
                 "../../../packages/vite/src/index"
             ],
+            "@rad/publish": [
+                "./packages/publish/src/*",
+                "../publish/src/*",
+                "../packages/publish/src/*",
+                "../../packages/publish/src/*",
+                "../../../packages/publish/src/*"
+            ],
             "@rad/design-tokens/*": [
                 "./packages/design-tokens/*",
                 "../design-tokens/*",
@@ -76,7 +83,8 @@
         "rootDir": "."
     },
     "include": [
-        "src"
+        "src",
+        "output"
     ],
     "exclude": [
         "node_modules",
