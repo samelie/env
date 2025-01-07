@@ -11,7 +11,8 @@ function decodeAndPopulateEnv(encodedVarName: string = "X_ENV"): void {
     const encodedEnv = process.env[encodedVarName];
 
     if (!encodedEnv) {
-        throw new Error(`${encodedVarName} not found in process.env`);
+        console.error(`${encodedEnv} not in process.env ... skipping ...`);
+        return;
     }
 
     try {
