@@ -76,6 +76,7 @@ function decodeAndPopulateEnv(encodedVarName?: string): void {
 // Example usage:
 try {
     decodeAndPopulateEnv();
+    import.meta.env = { ...import.meta.env, ...process.env };
 } catch (error) {
     // Type guard to check if error is an Error object
     if (error instanceof Error) {
@@ -109,7 +110,12 @@ export function encodeEnvFile(envContent: string): string {
 */
 
 export function load(absPath: string) {
-    dotenv.config({ path: absPath });
+    try {
+        dotenv.config({ path: absPath });
+        import.meta.env = { ...import.meta.env, ...process.env };
+    } catch (error) {
+        console.log(`Caught! ${error}`);
+    }
 }
 
 export function getEnv(k: string) {

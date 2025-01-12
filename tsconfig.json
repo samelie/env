@@ -97,11 +97,6 @@
         "dist",
         "build"
     ],
-    "references": [
-        {
-            "path": "./builder.tsconfig.json"
-        }
-    ],
     "watchOptions": {
         "excludeDirectories": [
             "**/node_modules",
