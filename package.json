@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "@types/dotenv-flow": "^3.3.3",
-    "tsup": "^8.3.6"
+    "tsup": "^8.4.0"
   }
 }
