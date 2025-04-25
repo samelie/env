@@ -113,8 +113,8 @@ export function load(absPath: string) {
     try {
         dotenv.config({ path: absPath });
         import.meta.env = { ...import.meta.env, ...process.env };
-    } catch (error) {
-        console.log(`Caught! ${error}`);
+    } catch {
+        // Silently handle error loading environment variables
     }
 }
 

@@ -1,3 +1,3 @@
 import config from "@rad/eslint";
 
-export default config()
+export default config();
