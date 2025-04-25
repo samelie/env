@@ -13,13 +13,16 @@
     }
   },
   "dependencies": {
-    "@rad/eslint": "workspace:*",
     "dotenv-flow": "^4.1.0"
   },
   "scripts": {
-    "build": "tsup ./src --outDir build --clean --format esm,cjs --shims --dts --platform node"
+    "build": "tsup ./src --outDir build --clean --format esm,cjs --shims --dts --platform node",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "types": "tsc -p tsconfig.typecheck.json"
   },
   "devDependencies": {
+    "@rad/eslint": "workspace:*",
     "@types/dotenv-flow": "^3.3.3",
     "tsup": "^8.4.0"
   }
