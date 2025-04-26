@@ -1,22 +1,22 @@
 {
   "name": "@rad/env",
   "type": "module",
-  "main": "./build/main.js",
-  "module": "./build/main.js",
+  "main": "./dist/main.js",
+  "module": "./dist/main.js",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./build/main.d.ts",
-      "import": "./build/main.js",
-      "module": "./build/main.js",
-      "require": "./build/main.cjs"
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js",
+      "module": "./dist/main.js",
+      "require": "./dist/main.cjs"
     }
   },
   "dependencies": {
     "dotenv-flow": "^4.1.0"
   },
   "scripts": {
-    "build": "tsup ./src --outDir build --clean --format esm,cjs --shims --dts --platform node",
+    "dist": "tsup ./src --outDir dist --clean --format esm,cjs --shims --dts --platform node",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "types": "tsc -p tsconfig.typecheck.json"
