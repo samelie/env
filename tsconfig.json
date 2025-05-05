@@ -7,14 +7,14 @@
         "skipDefaultLibCheck": true,
         "target": "ESNext",
         "useDefineForClassFields": true,
-        "module": "NodeNext",
+        "module": "ESNext",
         "lib": [
             "ESNext",
             "DOM",
             "DOM.Iterable"
         ],
         "skipLibCheck": true,
-        "moduleResolution": "NodeNext",
+        "moduleResolution": "bundler",
         "allowImportingTsExtensions": true,
         "isolatedModules": true,
         "moduleDetection": "force",
@@ -113,7 +113,9 @@
     "exclude": [
         "node_modules",
         "dist",
-        "build"
+        "build",
+        "output",
+        "output-results"
     ],
     "watchOptions": {
         "excludeDirectories": [
