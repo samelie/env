@@ -97,9 +97,6 @@
                 "../packages/type-utils/src/index",
                 "../../packages/type-utils/src/index",
                 "../../../packages/type-utils/src/index"
-            ],
-            "@k8s/*": [
-                "./lib-pkg/*"
             ]
         },
         "types": [
@@ -113,9 +110,7 @@
     "exclude": [
         "node_modules",
         "dist",
-        "build",
-        "output",
-        "output-results"
+        "build"
     ],
     "watchOptions": {
         "excludeDirectories": [
