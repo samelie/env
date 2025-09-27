@@ -19,13 +19,15 @@
     "build": "tsup ./src --outDir dist --clean --format esm,cjs --shims --dts --platform node",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "types": "tsc -p tsconfig.typecheck.json"
+    "types": "tsc -p tsconfig.typecheck.json",
+    "knip": "knip"
   },
   "devDependencies": {
     "@rad/eslint": "workspace:*",
     "@types/dotenv-flow": "^3.3.3",
     "eslint": "^9.36.0",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "@rad/config": "workspace:*"
   }
 }
