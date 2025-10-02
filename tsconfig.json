@@ -16,7 +16,9 @@
         "lib": [
             "ESNext",
             "DOM",
-            "DOM.Iterable"
+            "DOM.Iterable",
+            "esnext",
+            "esnext.asynciterable"
         ],
         "skipLibCheck": true,
         "moduleResolution": "bundler",
@@ -71,6 +73,13 @@
                 "../packages/design-tokens/*",
                 "../../packages/design-tokens/*",
                 "../../../packages/design-tokens/*"
+            ],
+            "@rad/design-system/*": [
+                "./packages/design-system/src/*",
+                "../design-system/*",
+                "../packages/design-system/src/*",
+                "../../packages/design-system/src/*",
+                "../../../packages/design-system/src/*"
             ],
             "@rad/eslint": [
                 "./packages/eslint",
