@@ -120,8 +120,8 @@ export function load(absPath: string) {
     }
 }
 
-export function getEnv(k: string) {
-    return process.env[k];
+export function getEnv(k: string, defaultValue?: string): string | undefined {
+    return process.env[k] ?? defaultValue;
 }
 
 export const isProd = getEnv("NODE_ENV") === "production";
