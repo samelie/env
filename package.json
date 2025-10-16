@@ -25,11 +25,11 @@
     "dev": "tsx src/index.ts"
   },
   "devDependencies": {
+    "@adddog/config-defaults": "^0.0.3",
     "@adddog/eslint": "workspace:*",
+    "@eslint/js": "^9.37.0",
     "@rad/config": "workspace:*",
-"@adddog/config-defaults": "^0.0.3",
     "@types/dotenv-flow": "^3.3.3",
-    "eslint": "^9.37.0",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   },
