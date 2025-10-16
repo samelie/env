@@ -27,9 +27,9 @@
   "devDependencies": {
     "@adddog/config-defaults": "^0.0.4",
     "@adddog/eslint": "workspace:*",
-    "eslint": "^9.37.0",
     "@rad/config": "workspace:*",
     "@types/dotenv-flow": "^3.3.3",
+    "eslint": "^9.37.0",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   },
