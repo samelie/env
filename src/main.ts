@@ -1,4 +1,5 @@
 import { Buffer } from "node:buffer";
+import { readFileSync, statSync } from "node:fs";
 import process from "node:process";
 import dotenv from "dotenv-flow";
 
@@ -112,9 +113,28 @@ export function encodeEnvFile(envContent: string): string {
 
 export function load(absPath: string) {
     try {
-        dotenv.config({ path: absPath });
-        // Note: import.meta.env is read-only and cannot be assigned to
-        // Applications should access process.env directly after this setup
+        const stat = statSync(absPath);
+        if (stat.isFile()) {
+            // Load single file directly
+            const content = readFileSync(absPath, "utf-8");
+            const lines = content.split("\n");
+            for (const line of lines) {
+                const trimmed = line.trim();
+                if (!trimmed || trimmed.startsWith("#")) continue;
+                const eq = trimmed.indexOf("=");
+                if (eq === -1) continue;
+                const key = trimmed.slice(0, eq).trim();
+                let value = trimmed.slice(eq + 1).trim();
+                // Remove surrounding quotes
+                value = value.replace(/^["']|["']$/g, "");
+                if (key) process.env[key] = value;
+            }
+            console.log(`[env] loaded=${absPath} NODE_ENV=${process.env.NODE_ENV}`);
+        } else {
+            // Directory - use dotenv-flow
+            dotenv.config({ path: absPath });
+            console.log(`[env] loaded=${absPath} NODE_ENV=${process.env.NODE_ENV}`);
+        }
     } catch {
         // Silently handle error loading environment variables
     }
