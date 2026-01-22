@@ -25,8 +25,6 @@
     "knip": "knip"
   },
   "devDependencies": {
-    "@adddog/config-defaults": "workspace:*",
-    "@adddog/eslint": "workspace:*",
     "@rad/config": "workspace:*",
     "@types/dotenv-flow": "^3.3.3",
     "eslint": "^9.39.2",
