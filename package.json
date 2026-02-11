@@ -27,7 +27,7 @@
   "devDependencies": {
     "@rad/config": "workspace:*",
     "@types/dotenv-flow": "^3.3.3",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },
