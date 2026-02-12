@@ -5,6 +5,8 @@ import { defineKnipConfig } from "@adddog/monorepo-consistency";
 export default defineKnipConfig({
     entry: ["src/index.ts"],
     project: ["src/**/*.ts"],
+    // WHY: knip/tsx not in devDeps, used in scripts
     ignoreBinaries: ["knip", "tsx"],
+    // WHY: workspace config dep; types-only pkg providing ambient types
     ignoreDependencies: ["@rad/config", "@types/dotenv-flow"],
 });
