@@ -25,7 +25,7 @@
     "knip": "knip"
   },
   "devDependencies": {
-    "@rad/config": "workspace:*",
+    "@adddog/monorepo-consistency": "workspace:*",
     "@types/dotenv-flow": "^3.3.3",
     "eslint": "^10.0.0",
     "tsup": "^8.5.1",
