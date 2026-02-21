@@ -1,17 +1,15 @@
 {
-  "name": "@rad/env",
+  "name": "@adddog/env",
   "type": "module",
-  "main": "./dist/main.js",
-  "module": "./dist/main.js",
+  "main": "./src/main.ts",
+  "types": "./src/main.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/main.d.ts",
-      "import": "./dist/main.js",
-      "module": "./dist/main.js",
-      "require": "./dist/main.cjs"
+      "import": "./src/main.ts"
     }
   },
+  "files": ["dist"],
   "dependencies": {
     "dotenv-flow": "^4.1.0"
   },
@@ -22,20 +20,39 @@
     "types": "tsc -p tsconfig.typecheck.json",
     "test": "echo '⚠️⚠️⚠️no test vitest --watch=false'",
     "dev": "tsx src/index.ts",
-    "knip": "knip"
+    "knip": "knip",
+    "release": "bumpp --yes --no-push --no-tag --release patch",
+    "prepublishOnly": "pnpm run lint && pnpm run types && pnpm run build",
+    "prepack": "pnpm run prepublishOnly",
+    "version:patch": "npm version patch --no-git-tag-version"
   },
   "devDependencies": {
     "@adddog/monorepo-consistency": "workspace:*",
     "@types/dotenv-flow": "^3.3.3",
+    "bumpp": "^10.4.1",
     "eslint": "^10.0.0",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },
   "version": "0.0.1",
-  "private": true,
   "engines": {
     "node": ">= 22",
     "pnpm": ">= 10",
     "npm": ">= 11"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "exports": {
+      "./package.json": "./package.json",
+      ".": {
+        "types": "./dist/main.d.ts",
+        "import": "./dist/main.js",
+        "module": "./dist/main.js",
+        "require": "./dist/main.cjs"
+      }
+    },
+    "main": "./dist/main.js",
+    "types": "./dist/main.d.ts"
   }
 }

@@ -1,4 +1,4 @@
-# @rad/env
+# @adddog/env
 
 ## Scripts
 
