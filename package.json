@@ -36,7 +36,7 @@
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "node": ">= 22",
     "pnpm": ">= 10",
