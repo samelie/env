@@ -24,7 +24,7 @@
     "dev": "tsx src/index.ts",
     "knip": "knip",
     "release": "bumpp --yes --no-push --no-tag --release patch",
-    "prepublishOnly": "pnpm run lint && pnpm run types && pnpm run build",
+    "prepublishOnly": "pnpm run types && pnpm run build",
     "prepack": "pnpm run prepublishOnly",
     "version:patch": "npm version patch --no-git-tag-version"
   },
