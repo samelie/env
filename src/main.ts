@@ -3,6 +3,8 @@ import { readFileSync, statSync } from "node:fs";
 import process from "node:process";
 import dotenv from "dotenv-flow";
 
+const SURROUNDING_QUOTES_RE = /^["']|["']$/g;
+
 /**
  * Gets all environment variable keys containing X_ENV
  * Returns keys sorted by length and then alphabetically
@@ -58,7 +60,7 @@ function decodeAndPopulateEnv(encodedVarName?: string): void {
                 const value = line.slice(firstEquals + 1).trim();
 
                 // Remove surrounding quotes if they exist
-                const cleanValue = value.replace(/^["']|["']$/g, "");
+                const cleanValue = value.replace(SURROUNDING_QUOTES_RE, "");
 
                 // Set in process.env if key is valid
                 if (key) {
@@ -126,7 +128,7 @@ export function load(absPath: string) {
                 const key = trimmed.slice(0, eq).trim();
                 let value = trimmed.slice(eq + 1).trim();
                 // Remove surrounding quotes
-                value = value.replace(/^["']|["']$/g, "");
+                value = value.replace(SURROUNDING_QUOTES_RE, "");
                 if (key) process.env[key] = value;
             }
             console.log(`[env] loaded=${absPath} NODE_ENV=${process.env.NODE_ENV}`);
