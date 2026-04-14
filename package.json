@@ -6,7 +6,9 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./src/main.ts"
+      "types": "./src/main.ts",
+      "import": "./src/main.ts",
+      "default": "./src/main.ts"
     }
   },
   "files": [
